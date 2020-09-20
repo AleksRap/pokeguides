@@ -1,0 +1,25 @@
+@import '../../style/mixins/center';
+
+.error {
+  @include center();
+  flex-direction: column;
+
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.num {
+  font-size: 86px;
+
+  @media (min-width: 768px) {
+    font-size: 130px;
+  }
+}
+
+.text {
+  font-size: 36px;
+
+  @media (min-width: 768px) {
+    font-size: 64px;
+  }
+}

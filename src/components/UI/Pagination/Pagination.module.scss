@@ -1,0 +1,67 @@
+@import '../../../style/variable';
+
+.Pagination {
+  display: flex;
+  justify-content: center;
+
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.prev,
+.next {
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+
+    width: 10px;
+    height: 6px;
+
+    background: url('../../../assets/svg/icons/gray-arrow-down.svg') center/contain no-repeat;
+  }
+}
+
+.prev {
+
+  &::after {
+    left: -14px;
+    transform: rotate(90deg);
+  }
+}
+
+.next {
+
+  &::after {
+    right: -14px;
+    transform: rotate(-90deg);
+  }
+}
+
+.nums {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.num {
+  cursor: pointer;
+  margin-right: 15px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.active {
+    font-weight: 500;
+    color: $first-color;
+  }
+}
+
+.dot {
+  margin-right: 15px;
+}

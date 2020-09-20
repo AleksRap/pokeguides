@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Roboto'), url('../assets/fonts/Roboto-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto'), url('../assets/fonts/Roboto-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Roboto'), url('../assets/fonts/Roboto-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto'), url('../assets/fonts/Roboto-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pokemon';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pokemon'), url('../assets/fonts/Pokemon-Solid.woff') format('woff');
+}
