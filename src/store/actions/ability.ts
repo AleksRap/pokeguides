@@ -44,7 +44,7 @@ export function getInfoAbility(id: number | string) {
       dispatch(getInfoAbilitySuccess(response.data));
     } catch (e) {
       if (e.response) {
-        dispatch(infoAbilityError(e.response.data.errors));
+        dispatch(infoAbilityError(e.response.data));
       }
     }
   }

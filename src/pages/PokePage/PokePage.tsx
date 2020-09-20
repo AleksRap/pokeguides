@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {NavLink, useParams} from "react-router-dom";
 import {connect} from 'react-redux';
 import classes from './PokePage.module.scss'
@@ -66,7 +66,9 @@ const PokePage = ({
     </About>
   );
 
-  return usePreloader(content, () => getInfo(id))
+  const callback = useCallback(() => getInfo(id), [getInfo, id]);
+
+  return usePreloader(content, callback)
 }
 
 

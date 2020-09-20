@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {connect} from 'react-redux';
 import {useParams} from 'react-router-dom';
 import classes from './AbilityPage.module.scss'
@@ -37,7 +37,9 @@ const AbilityPage = ({
     </About>
   );
 
-  return usePreloader(content, () => getInfo(id))
+  const callback = useCallback(() => getInfo(id), [getInfo, id]);
+
+  return usePreloader(content, callback);
 }
 
 function mapStateToProps(state: any) {

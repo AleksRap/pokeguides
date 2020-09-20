@@ -71,7 +71,7 @@ export function getInfoPokemon(id: number | string) {
       dispatch(getInfoPokemonSuccess(response.data));
     } catch (e) {
       if (e.response) {
-        dispatch(infoPokemonError(e.response.data.errors));
+        dispatch(infoPokemonError(e.response.data));
       }
     }
   }

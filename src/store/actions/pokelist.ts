@@ -72,7 +72,7 @@ export function getPokelist(params: ListParams) {
       dispatch(getPokelistSuccess(response.data));
     } catch (e) {
       if (e.response) {
-        dispatch(pokelistError(e.response.data.errors));
+        dispatch(pokelistError(e.response.data));
       }
     }
   }
