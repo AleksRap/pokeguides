@@ -1,0 +1,35 @@
+.content {
+  max-width: 1900px;
+
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media (min-width: 1900px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.nav {
+  display: flex;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.link {
+  display: inline-block;
+
+  margin-right: 20px;
+
+  text-decoration: none;
+  color: white;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.active {
+    text-decoration: underline;
+  }
+}

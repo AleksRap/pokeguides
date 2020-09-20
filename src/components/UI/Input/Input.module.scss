@@ -1,0 +1,23 @@
+@import '../../../style/variable';
+
+.input {
+  width: 100%;
+  padding: 9px 30px 9px 12px;
+
+  background: $light-font;
+  border: 2px solid $dark-font;
+  border-radius: 8px;
+
+  font-weight: 300;
+  font-size: 14px;
+
+  &::placeholder {
+    color: rgba(0, 0, 0, .5);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 6px rgba(71, 164, 227, 0.08);
+    border: 2px solid $second-color;
+  }
+}

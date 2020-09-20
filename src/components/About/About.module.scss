@@ -1,0 +1,32 @@
+@import '../../style/variable';
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+
+  h1 {
+    font-size: 36px;
+
+    @media (min-width: 768px) {
+      font-size: 42px;
+    }
+  }
+}
+
+.img {
+  width: 100%;
+  height: 300px;
+
+  margin-bottom: 30px;
+
+  background: url('../../assets/images/pokecard-background.jpg') center/cover no-repeat;
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+  }
+}

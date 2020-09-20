@@ -3,10 +3,8 @@
 
 .body {
   @include center();
-  flex-direction: column;
-
-  width: 100vw;
   height: 100vh;
+  flex-direction: column;
 
   h1 {
     max-width: 280px;
@@ -32,8 +30,22 @@
 }
 
 .btn {
+  padding: 15px 30px;
 
-  @media (min-width: 768px) {
-    max-width: 200px;
+  background-color: $second-color;
+  border-radius: 5px;
+
+  color: $light-font;
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: $transition;
+
+  @media (min-width: 1024px) {
+    &:hover {
+      background-color: lightskyblue;
+      color: $dark-font;
+      transition: $transition;
+    }
   }
 }

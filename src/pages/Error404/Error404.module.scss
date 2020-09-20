@@ -1,10 +1,11 @@
 @import '../../style/mixins/center';
+@import '../../style/variable';
 
 .error {
   @include center();
   flex-direction: column;
 
-  width: 100vw;
+  width: 100%;
   height: calc(var(--vh, 1vh) * 100);
 }
 
@@ -17,6 +18,8 @@
 }
 
 .text {
+  margin-bottom: 20px;
+
   font-size: 36px;
 
   @media (min-width: 768px) {
