@@ -5,6 +5,7 @@ import {filterPokelist, getPokelist, ListParams} from '../../store/actions/pokel
 import PokeCard from '../../components/PokeCard/PokeCard';
 import usePagination from '../../hooks/usePagination';
 import Filter from '../../components/Filter/Filter';
+import debounce from '../../functions/debounce';
 
 interface PokeListProps {
   pokelist: [] | null,
@@ -24,10 +25,12 @@ const PokeList = ({
 
   const [searchValue, changeSearchValue] = useState('');
 
+  const debounceFilter = useCallback(debounce(filterPokelist, 700), [filterPokelist]);
+
   const onChange = (e: any) => {
-    const {target: value} = e;
+    const value = e.target.value;
     changeSearchValue(value);
-    filterPokelist(value);
+    debounceFilter(value);
   }
   const clearSearchValue = useCallback(() => {
     changeSearchValue('');
