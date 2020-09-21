@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import Hello from '../pages/Hello/Hello';
 import PokeList from '../pages/PokeList/PokeList';
 import PokePage from '../pages/PokePage/PokePage';

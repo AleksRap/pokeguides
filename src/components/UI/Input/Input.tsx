@@ -1,5 +1,5 @@
-import * as React from "react";
-import classes from "./Input.module.scss";
+import * as React from 'react';
+import classes from './Input.module.scss';
 
 interface InputProps {
   type?: string,

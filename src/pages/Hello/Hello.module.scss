@@ -3,11 +3,13 @@
 
 .body {
   @include center();
-  height: 100vh;
+  height: calc(100vh - 56px);
   flex-direction: column;
 
   h1 {
     max-width: 280px;
+    margin-top: 0;
+    margin-bottom: 10px;
 
     text-align: center;
     font-size: 24px;
@@ -19,13 +21,18 @@
   }
 
   h2 {
-    margin: 0 0 100px;
+    margin: 0 0 50px;
 
     font-family: 'Pokemon', Arial, sans-serif;
+    font-size: 42px;
     letter-spacing: 0.1em;
     font-weight: normal;
-    font-size: 80px;
     color: $first-color;
+
+    @media (min-width: 768px) {
+      margin: 0 0 100px;
+      font-size: 80px;
+    }
   }
 }
 

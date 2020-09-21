@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react';
-import {NavLink, useParams} from "react-router-dom";
+import {NavLink, useParams} from 'react-router-dom';
 import {connect} from 'react-redux';
 import classes from './PokePage.module.scss'
 import {getInfoPokemon} from '../../store/actions/pokemon';

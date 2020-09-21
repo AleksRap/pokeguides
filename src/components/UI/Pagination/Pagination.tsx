@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState} from 'react';
 import classes from './Pagination.module.scss';
 
 interface PaginationProps {
@@ -75,7 +75,7 @@ const Pagination = ({
     return show
       ? (
         <span
-          role="presentation"
+          role='presentation'
           className={classes[direction]}
           onClick={handlerClick}
         />

@@ -3,7 +3,7 @@ import {
   GET_POKELIST_SUCCESS,
   POKELIST_ERROR, POKELIST_FILTER,
 } from './actionTypes';
-import serialize from "../../functions/serialize";
+import serialize from '../../functions/serialize';
 
 interface PokelistServerProps {
   url: string,

@@ -1,7 +1,6 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { useHistory, useLocation, useParams } from "react-router-dom";
-import Pagination from "../components/UI/Pagination/Pagination";
-
+import React, { useCallback, useEffect, useState } from 'react';
+import { useHistory, useLocation, useParams } from 'react-router-dom';
+import Pagination from '../components/UI/Pagination/Pagination';
 /**
  * Пагинация
  * @param fnGetInfo
@@ -51,7 +50,9 @@ export default function usePagination({
   }, [fnGetInfo, param, callback]);
 
   /** Получаем список элементов */
-  useEffect(() => {getInfoCallback()}, [getInfoCallback]);
+  useEffect(() => {
+    getInfoCallback()
+  }, [getInfoCallback]);
 
   /** Выполняется при кликах на пагинации */
   const onHandlerPagination = (num: number): void => {
