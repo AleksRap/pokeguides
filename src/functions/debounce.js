@@ -12,6 +12,6 @@ const debounce = (func, wait) => {
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
   };
-}
+};
 
 export default debounce;

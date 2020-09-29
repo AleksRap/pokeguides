@@ -1,9 +1,9 @@
 export default function serialize(a) {
   const s = [];
   const add = function (k, v) {
-    v = typeof v === 'function' ? v() : v;
-    v = v === null ? '' : v === undefined ? '' : v;
-    s[s.length] = encodeURIComponent(k) + '=' + encodeURIComponent(v);
+    v = typeof v === "function" ? v() : v;
+    v = v === null ? "" : v === undefined ? "" : v;
+    s[s.length] = encodeURIComponent(k) + "=" + encodeURIComponent(v);
   };
   const buildParams = function (prefix, obj) {
     let i, len, key;
@@ -12,13 +12,16 @@ export default function serialize(a) {
       if (Array.isArray(obj)) {
         for (i = 0, len = obj.length; i < len; i++) {
           buildParams(
-            prefix + '[' + (typeof obj[i] === 'object' && obj[i] ? i : '') + ']',
+            prefix +
+              "[" +
+              (typeof obj[i] === "object" && obj[i] ? i : "") +
+              "]",
             obj[i]
           );
         }
-      } else if (String(obj) === '[object Object]') {
+      } else if (String(obj) === "[object Object]") {
         for (key in obj) {
-          buildParams(prefix + '[' + key + ']', obj[key]);
+          buildParams(prefix + "[" + key + "]", obj[key]);
         }
       } else {
         add(prefix, obj);
@@ -35,5 +38,5 @@ export default function serialize(a) {
     return s;
   };
 
-  return decodeURIComponent(buildParams('', a).join('&'));
-};
+  return decodeURIComponent(buildParams("", a).join("&"));
+}
