@@ -1,6 +1,6 @@
-import React from 'react';
-import {Route} from 'react-router-dom';
-import {RoutesProps} from './routes';
+import React from "react";
+import { Route } from "react-router-dom";
+import { RoutesProps } from "./routes";
 
 /**
  * На входе массив с инфой о роутах
@@ -10,14 +10,11 @@ import {RoutesProps} from './routes';
  */
 
 export default function getListRoutes(routes: RoutesProps[]) {
-  return routes.map(({path, component, exact}): React.ReactNode => {
-    return(
-      <Route
-        path={path}
-        component={component}
-        exact={exact}
-        key={path}
-      />
-    );
-  });
+  return routes.map(
+    ({ path, component, exact }): React.ReactNode => {
+      return (
+        <Route path={path} component={component} exact={exact} key={path} />
+      );
+    }
+  );
 }

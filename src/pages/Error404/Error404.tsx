@@ -1,5 +1,5 @@
-import React from 'react';
-import classes from './Error404.module.scss'
+import React from "react";
+import classes from "./Error404.module.scss";
 
 const Error404 = () => (
   <div className={classes.error}>

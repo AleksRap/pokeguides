@@ -1,30 +1,33 @@
 import {
   GET_INFO_ABILITY_SUCCESS,
   INFO_ABILITY_ERROR,
-} from '../actions/actionTypes';
+} from "../actions/actionTypes";
 
 export interface Action {
-  type: string,
-  payload: any
+  type: string;
+  payload: any;
 }
 
 export interface AbilityInterface {
-  id: number,
-  name: string,
-  effectEntries: []
+  id: number;
+  name: string;
+  effectEntries: [];
 }
 
 interface AbilityReducerProps {
-  ability: AbilityInterface | null
-  errors: string | null
+  ability: AbilityInterface | null;
+  errors: string | null;
 }
 
 const initialState: AbilityReducerProps = {
   ability: null,
-  errors: null
+  errors: null,
 };
 
-export default function abilityReducer(state: AbilityReducerProps = initialState, action: Action) {
+export default function abilityReducer(
+  state: AbilityReducerProps = initialState,
+  action: Action
+) {
   switch (action.type) {
     case INFO_ABILITY_ERROR:
       return {

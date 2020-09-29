@@ -1,20 +1,21 @@
 import {
   GET_POKELIST_SUCCESS,
-  POKELIST_ERROR, POKELIST_FILTER,
-} from '../actions/actionTypes';
-import {Action} from './ability';
+  POKELIST_ERROR,
+  POKELIST_FILTER,
+} from "../actions/actionTypes";
+import { Action } from "./ability";
 
 interface PokelistProps {
-  id: number,
-  name: string
+  id: number;
+  name: string;
 }
 
 interface PokelistReducerProps {
-  pokelist: null | PokelistProps[],
-  pokelistFilter: null | [],
-  count: null | number,
-  limit: number,
-  errors: null | string
+  pokelist: null | PokelistProps[];
+  pokelistFilter: null | [];
+  count: null | number;
+  limit: number;
+  errors: null | string;
 }
 
 const initialState: PokelistReducerProps = {
@@ -22,10 +23,13 @@ const initialState: PokelistReducerProps = {
   pokelistFilter: null,
   count: null,
   limit: 30,
-  errors: null
+  errors: null,
 };
 
-export default function pokelistReducer(state: PokelistReducerProps = initialState, action: Action) {
+export default function pokelistReducer(
+  state: PokelistReducerProps = initialState,
+  action: Action
+) {
   switch (action.type) {
     case POKELIST_ERROR:
       return {
@@ -41,12 +45,13 @@ export default function pokelistReducer(state: PokelistReducerProps = initialSta
         errors: null,
       };
     case POKELIST_FILTER:
-
       return {
         ...state,
-        pokelistFilter: state.pokelist && state.pokelist.filter(({name}) => {
-          return name.toLowerCase().indexOf(action.payload) !== -1;
-        }),
+        pokelistFilter:
+          state.pokelist &&
+          state.pokelist.filter(({ name }) => {
+            return name.toLowerCase().indexOf(action.payload) !== -1;
+          }),
         errors: null,
       };
     default:

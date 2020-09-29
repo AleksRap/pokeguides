@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { useHistory, useLocation, useParams } from 'react-router-dom';
-import Pagination from '../components/UI/Pagination/Pagination';
+import React, { useCallback, useEffect, useState } from "react";
+import { useHistory, useLocation, useParams } from "react-router-dom";
+import Pagination from "../components/UI/Pagination/Pagination";
 /**
  * Пагинация
  * @param fnGetInfo
@@ -11,19 +11,16 @@ import Pagination from '../components/UI/Pagination/Pagination';
  * @returns {JSX.Element}
  */
 interface UsePaginationInterface {
-  fnGetInfo: (param: object) => void,
-  limit: number,
-  count: number,
-  className: string,
+  fnGetInfo: (param: object) => void;
+  limit: number;
+  count: number;
+  className: string;
 }
 
-export default function usePagination({
-                                        fnGetInfo,
-                                        limit,
-                                        count,
-                                        className
-                                      }: UsePaginationInterface, callback: () => any) {
-
+export default function usePagination(
+  { fnGetInfo, limit, count, className }: UsePaginationInterface,
+  callback: () => any
+) {
   /** Объект истории */
   const history = useHistory();
 
@@ -31,14 +28,14 @@ export default function usePagination({
   const location = useLocation();
 
   /** Параметры роутов */
-  const {page} = useParams();
+  const { page } = useParams();
 
   /** Параметры запроса списка */
-  const [param, changeParam] = useState({limit, offset: 0});
+  const [param, changeParam] = useState({ limit, offset: 0 });
   const currentOffset: number = limit * (+page - 1);
 
   if (param.offset !== currentOffset) {
-    changeParam({...param, offset: currentOffset})
+    changeParam({ ...param, offset: currentOffset });
   }
 
   /** Функция получения списка элементов */
@@ -51,28 +48,27 @@ export default function usePagination({
 
   /** Получаем список элементов */
   useEffect(() => {
-    getInfoCallback()
+    getInfoCallback();
   }, [getInfoCallback]);
 
   /** Выполняется при кликах на пагинации */
   const onHandlerPagination = (num: number): void => {
-
     /** Убираем параметр страницы из пути если он есть */
-    const arrPathWithoutParamPage: string[] = location.pathname.split('/');
+    const arrPathWithoutParamPage: string[] = location.pathname.split("/");
     if (page) {
       arrPathWithoutParamPage.splice(arrPathWithoutParamPage.length - 1, 1);
     }
-    const pathWithoutParamPage: string = arrPathWithoutParamPage.join('/')
+    const pathWithoutParamPage: string = arrPathWithoutParamPage.join("/");
 
     /** Перебрасываем на url страницы */
-    history.push({pathname: `${pathWithoutParamPage}/${num}`})
+    history.push({ pathname: `${pathWithoutParamPage}/${num}` });
 
     const newParam = {
       ...param,
-      offset: limit * (num - 1)
-    }
+      offset: limit * (num - 1),
+    };
     changeParam(newParam);
-  }
+  };
 
   return (
     <Pagination

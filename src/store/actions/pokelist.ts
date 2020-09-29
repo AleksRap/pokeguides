@@ -1,69 +1,66 @@
-import axiosCustom from '../../axios/config';
+import axiosCustom from "../../axios/config";
 import {
   GET_POKELIST_SUCCESS,
-  POKELIST_ERROR, POKELIST_FILTER,
-} from './actionTypes';
-import serialize from '../../functions/serialize';
+  POKELIST_ERROR,
+  POKELIST_FILTER,
+} from "./actionTypes";
+import serialize from "../../functions/serialize";
 
 interface PokelistServerProps {
-  url: string,
-  name: string
+  url: string;
+  name: string;
 }
 
 interface Results {
-  results: PokelistServerProps[]
+  results: PokelistServerProps[];
 }
 
 export interface ListParams {
-  limit: number,
-  offset: number
+  limit: number;
+  offset: number;
 }
 
 export function getPokelistSuccess(pokeinfo: Results) {
-
   /**
    * Приводим результаты к нужному виду
    */
-  const formatResults = pokeinfo.results.map(({name, url}) => {
-    const formatName = name[0].toUpperCase() + name.slice(1)
-    const id = +url.split('/').reverse()[1];
+  const formatResults = pokeinfo.results.map(({ name, url }) => {
+    const formatName = name[0].toUpperCase() + name.slice(1);
+    const id = +url.split("/").reverse()[1];
 
     return {
       name: formatName,
-      id
-    }
+      id,
+    };
   });
 
   return {
     type: GET_POKELIST_SUCCESS,
     payload: {
       ...pokeinfo,
-      results: formatResults
-    }
-  }
+      results: formatResults,
+    },
+  };
 }
 
 export function filterPokelist(name: string) {
   return {
     type: POKELIST_FILTER,
-    payload: name.toLowerCase()
-  }
+    payload: name.toLowerCase(),
+  };
 }
 
 export function pokelistError(error: string) {
   return {
     type: POKELIST_ERROR,
-    payload: error
-  }
+    payload: error,
+  };
 }
 
 export function getPokelist(params: ListParams) {
   return async (dispatch: any) => {
-
-    let formatParams = '';
-    if (params) formatParams = params
-      ? `?${serialize(params)}`
-      : '';
+    let formatParams = "";
+    if (params) formatParams = params ? `?${serialize(params)}` : "";
 
     const url = `pokemon${formatParams}`;
 
@@ -75,5 +72,5 @@ export function getPokelist(params: ListParams) {
         dispatch(pokelistError(e.response.data));
       }
     }
-  }
+  };
 }

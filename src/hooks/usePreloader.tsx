@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import Preloader from '../components/UI/Preloader/Preloader';
+import React, { useEffect, useState } from "react";
+import Preloader from "../components/UI/Preloader/Preloader";
 
 /**
  * Прелоадер использует искусственную задержку, для того чтобы не было моргания при слишком быстрой загрузке
@@ -14,7 +14,7 @@ const usePreloader = (component: React.ReactNode, fn: () => void) => {
   const timeStart: number = new Date().getTime();
   let timeEnd: number | null = null;
 
-  useEffect( () => {
+  useEffect(() => {
     let timeout: any;
 
     (async () => {
@@ -34,10 +34,7 @@ const usePreloader = (component: React.ReactNode, fn: () => void) => {
     return () => clearTimeout(timeout);
   }, [fn, changeLoading]);
 
-  return loading
-    ? <Preloader />
-    : component;
+  return loading ? <Preloader /> : component;
 };
 
 export default usePreloader;
-
