@@ -17,7 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "prettier": "prettier --write src/**/*.{ts,tsx}"
+    "prettier": "prettier --write src/**/*.{ts,tsx,js,jsx}"
   },
   "browserslist": {
     "production": [
