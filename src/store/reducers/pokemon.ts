@@ -2,8 +2,8 @@
 import {
   GET_INFO_POKEMON_SUCCESS,
   POKELIST_ERROR,
-} from "../actions/actionTypes";
-import { Action } from "./ability";
+} from '../actions/actionTypes';
+import { Action } from './ability';
 
 export interface AbilitiesProps {
   id: number;

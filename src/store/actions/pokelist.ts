@@ -1,10 +1,10 @@
-import axiosCustom from "../../axios/config";
+import axiosCustom from '../../axios/config';
 import {
   GET_POKELIST_SUCCESS,
   POKELIST_ERROR,
   POKELIST_FILTER,
-} from "./actionTypes";
-import serialize from "../../functions/serialize";
+} from './actionTypes';
+import serialize from '../../functions/serialize';
 
 interface PokelistServerProps {
   url: string;
@@ -26,7 +26,7 @@ export function getPokelistSuccess(pokeinfo: Results) {
    */
   const formatResults = pokeinfo.results.map(({ name, url }) => {
     const formatName = name[0].toUpperCase() + name.slice(1);
-    const id = +url.split("/").reverse()[1];
+    const id = +url.split('/').reverse()[1];
 
     return {
       name: formatName,
@@ -59,8 +59,8 @@ export function pokelistError(error: string) {
 
 export function getPokelist(params: ListParams) {
   return async (dispatch: any) => {
-    let formatParams = "";
-    if (params) formatParams = params ? `?${serialize(params)}` : "";
+    let formatParams = '';
+    if (params) formatParams = params ? `?${serialize(params)}` : '';
 
     const url = `pokemon${formatParams}`;
 

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import classes from "./Pagination.module.scss";
+import React, { useEffect, useState } from 'react';
+import classes from './Pagination.module.scss';
 
 interface PaginationProps {
   className: string;
@@ -49,20 +49,20 @@ const Pagination = ({
 
   /** Шаблон боковых элементов */
   const directionTmpl = (
-    direction: string = "next"
+    direction: string = 'next'
   ): React.ReactNode | null => {
     let handlerClick: () => void = () => {};
     let show: boolean = false;
 
     switch (direction) {
-      case "prev":
+      case 'prev':
         handlerClick = (): void => {
           onPrev(activePage - 1);
           prevPage();
         };
         show = activePage !== 1;
         break;
-      case "next":
+      case 'next':
         handlerClick = (): void => {
           onNext(activePage + 1);
           nextPage();
@@ -103,7 +103,7 @@ const Pagination = ({
     return (
       <span
         role="presentation"
-        className={clsNum.join(" ")}
+        className={clsNum.join(' ')}
         onClick={handlerClick}
         key={num}
       >
@@ -145,8 +145,8 @@ const Pagination = ({
     activePage === countPage ? numTmpl(countPage, true) : numTmpl(countPage);
 
   return (
-    <div className={cls.join(" ")}>
-      {directionTmpl("prev")}
+    <div className={cls.join(' ')}>
+      {directionTmpl('prev')}
 
       <div className={classes.nums}>
         {fivePagesTmpl()}
@@ -154,7 +154,7 @@ const Pagination = ({
         {lastPageTmpl}
       </div>
 
-      {directionTmpl("next")}
+      {directionTmpl('next')}
     </div>
   );
 };

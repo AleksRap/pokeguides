@@ -1,5 +1,5 @@
-import React from "react";
-import classes from "./Preloader.module.scss";
+import React from 'react';
+import classes from './Preloader.module.scss';
 
 interface PreloaderProps {
   className?: string;
@@ -11,7 +11,7 @@ const Preloader = ({ className }: PreloaderProps) => {
     cls.push(className);
   }
 
-  return <div className={cls.join(" ")} />;
+  return <div className={cls.join(' ')} />;
 };
 
 export default Preloader;

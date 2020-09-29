@@ -2,8 +2,8 @@ import {
   GET_POKELIST_SUCCESS,
   POKELIST_ERROR,
   POKELIST_FILTER,
-} from "../actions/actionTypes";
-import { Action } from "./ability";
+} from '../actions/actionTypes';
+import { Action } from './ability';
 
 interface PokelistProps {
   id: number;

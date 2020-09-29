@@ -1,19 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "./store/store";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 /** Сброс стилей */
-import "normalize.css";
+import 'normalize.css';
 
 /** Высота вьюпорта с учетом панелей инструментов на мобилках */
-import "./functions/viewportHeight";
+import './functions/viewportHeight';
 
 /** Общие стили */
-import "./style/_index.scss";
+import './style/_index.scss';
 
-import App from "./App";
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -23,5 +23,5 @@ ReactDOM.render(
       </Router>
     </Provider>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root')
 );

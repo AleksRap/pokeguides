@@ -1,6 +1,6 @@
-import React from "react";
-import classes from "./About.module.scss";
-import getUrlImgPokemon from "../../functions/getUrlImgPokemon";
+import React from 'react';
+import classes from './About.module.scss';
+import getUrlImgPokemon from '../../functions/getUrlImgPokemon';
 
 interface AboutProps {
   id?: number;

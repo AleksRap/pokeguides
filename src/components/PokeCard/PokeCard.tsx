@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
-import classes from "./PokeCard.module.scss";
-import getUrlImgPokemon from "../../functions/getUrlImgPokemon";
-import Preloader from "../UI/Preloader/Preloader";
+import React, { useEffect, useRef, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import classes from './PokeCard.module.scss';
+import getUrlImgPokemon from '../../functions/getUrlImgPokemon';
+import Preloader from '../UI/Preloader/Preloader';
 
 interface PokeCardProps {
   id: number;

@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
-import axiosCustom from "../../axios/config";
-import { GET_INFO_ABILITY_SUCCESS, INFO_ABILITY_ERROR } from "./actionTypes";
+import axiosCustom from '../../axios/config';
+import { GET_INFO_ABILITY_SUCCESS, INFO_ABILITY_ERROR } from './actionTypes';
 
 interface InfoAbility {
   id: number;

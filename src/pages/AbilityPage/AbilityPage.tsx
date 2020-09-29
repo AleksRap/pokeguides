@@ -1,11 +1,11 @@
-import React, { useCallback } from "react";
-import { connect } from "react-redux";
-import { useParams } from "react-router-dom";
-import classes from "./AbilityPage.module.scss";
-import { getInfoAbility } from "../../store/actions/ability";
-import About from "../../components/About/About";
-import usePreloader from "../../hooks/usePreloader";
-import { AbilityInterface } from "../../store/reducers/ability";
+import React, { useCallback } from 'react';
+import { connect } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import classes from './AbilityPage.module.scss';
+import { getInfoAbility } from '../../store/actions/ability';
+import About from '../../components/About/About';
+import usePreloader from '../../hooks/usePreloader';
+import { AbilityInterface } from '../../store/reducers/ability';
 
 interface AbilityPageProps {
   ability: AbilityInterface | null;

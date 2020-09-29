@@ -1,11 +1,11 @@
-import React, { useCallback } from "react";
-import { NavLink, useParams } from "react-router-dom";
-import { connect } from "react-redux";
-import classes from "./PokePage.module.scss";
-import { getInfoPokemon } from "../../store/actions/pokemon";
-import About from "../../components/About/About";
-import usePreloader from "../../hooks/usePreloader";
-import { AbilitiesProps } from "../../store/reducers/pokemon";
+import React, { useCallback } from 'react';
+import { NavLink, useParams } from 'react-router-dom';
+import { connect } from 'react-redux';
+import classes from './PokePage.module.scss';
+import { getInfoPokemon } from '../../store/actions/pokemon';
+import About from '../../components/About/About';
+import usePreloader from '../../hooks/usePreloader';
+import { AbilitiesProps } from '../../store/reducers/pokemon';
 
 interface PokePageProps {
   pokemon: any;
@@ -19,7 +19,7 @@ const PokePage = ({ pokemon, getInfo }: PokePageProps) => {
   const params =
     pokemon &&
     Object.keys(pokemon).map((key: any) => {
-      if (key === "abilities") {
+      if (key === 'abilities') {
         return null;
       }
 
@@ -46,14 +46,14 @@ const PokePage = ({ pokemon, getInfo }: PokePageProps) => {
   const content = (
     <About id={id} name={pokemon?.name}>
       <div className={classes.table}>
-        <div className={[classes.row, classes.head].join(" ")}>
+        <div className={[classes.row, classes.head].join(' ')}>
           <div className={classes.cell}>Параметр</div>
           <div className={classes.cell}>Значение</div>
         </div>
         {params}
         <div className={classes.row}>
           <div className={classes.cell}>abilities</div>
-          <div className={[classes.cell, classes.abilities].join(" ")}>
+          <div className={[classes.cell, classes.abilities].join(' ')}>
             {abilitiesTmpl}
           </div>
         </div>

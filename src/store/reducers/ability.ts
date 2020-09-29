@@ -1,7 +1,7 @@
 import {
   GET_INFO_ABILITY_SUCCESS,
   INFO_ABILITY_ERROR,
-} from "../actions/actionTypes";
+} from '../actions/actionTypes';
 
 export interface Action {
   type: string;

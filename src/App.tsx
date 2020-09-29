@@ -1,19 +1,19 @@
-import React from "react";
-import { NavLink, Switch } from "react-router-dom";
-import classes from "./App.module.scss";
+import React from 'react';
+import { NavLink, Switch } from 'react-router-dom';
+import classes from './App.module.scss';
 
-import routes from "./route/routes";
-import getListRoutes from "./route/getListRoutes";
+import routes from './route/routes';
+import getListRoutes from './route/getListRoutes';
 
-function App() {
+const App: React.FC = () => {
   /** Список роутов */
   const listRoutes: React.ReactNode[] = getListRoutes(routes);
 
   /** Список ссылок */
   const navListRoutes = routes.filter(({ name }) => {
     switch (name) {
-      case "hello":
-      case "pokelist":
+      case 'hello':
+      case 'pokelist':
         return true;
       default:
         return false;
@@ -38,6 +38,6 @@ function App() {
       <Switch>{listRoutes}</Switch>
     </main>
   );
-}
+};
 
 export default App;

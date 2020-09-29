@@ -1,5 +1,5 @@
-import * as React from "react";
-import classes from "./Input.module.scss";
+import * as React from 'react';
+import classes from './Input.module.scss';
 
 interface InputProps {
   type?: string;
@@ -10,7 +10,7 @@ interface InputProps {
 }
 
 const Input = ({
-  type = "text",
+  type = 'text',
   className,
   onChange,
   value,
@@ -28,7 +28,7 @@ const Input = ({
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-      className={cls.join(" ")}
+      className={cls.join(' ')}
     />
   );
 };

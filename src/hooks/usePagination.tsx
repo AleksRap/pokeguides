@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { useHistory, useLocation, useParams } from "react-router-dom";
-import Pagination from "../components/UI/Pagination/Pagination";
+import React, { useCallback, useEffect, useState } from 'react';
+import { useHistory, useLocation, useParams } from 'react-router-dom';
+import Pagination from '../components/UI/Pagination/Pagination';
 /**
  * Пагинация
  * @param fnGetInfo
@@ -54,11 +54,11 @@ export default function usePagination(
   /** Выполняется при кликах на пагинации */
   const onHandlerPagination = (num: number): void => {
     /** Убираем параметр страницы из пути если он есть */
-    const arrPathWithoutParamPage: string[] = location.pathname.split("/");
+    const arrPathWithoutParamPage: string[] = location.pathname.split('/');
     if (page) {
       arrPathWithoutParamPage.splice(arrPathWithoutParamPage.length - 1, 1);
     }
-    const pathWithoutParamPage: string = arrPathWithoutParamPage.join("/");
+    const pathWithoutParamPage: string = arrPathWithoutParamPage.join('/');
 
     /** Перебрасываем на url страницы */
     history.push({ pathname: `${pathWithoutParamPage}/${num}` });

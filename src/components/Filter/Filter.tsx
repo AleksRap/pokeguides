@@ -1,6 +1,6 @@
-import React from "react";
-import classes from "./Filter.module.scss";
-import Input from "../UI/Input/Input";
+import React from 'react';
+import classes from './Filter.module.scss';
+import Input from '../UI/Input/Input';
 
 interface FilterProps {
   className: string;
@@ -15,7 +15,7 @@ const Filter = ({ className, value, onChange }: FilterProps) => {
   }
 
   return (
-    <div className={cls.join(" ")}>
+    <div className={cls.join(' ')}>
       <Input
         placeholder="Введите имя для поиска по текущей странице"
         value={value}

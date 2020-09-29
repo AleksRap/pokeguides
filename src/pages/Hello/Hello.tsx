@@ -1,6 +1,6 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import classes from "./Hello.module.scss";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import classes from './Hello.module.scss';
 
 const Hello = (): React.ReactNode => (
   <div className={classes.body}>

@@ -1,15 +1,15 @@
-import React, { useCallback, useState } from "react";
-import { connect } from "react-redux";
-import classes from "./PokeList.module.scss";
+import React, { useCallback, useState } from 'react';
+import { connect } from 'react-redux';
+import classes from './PokeList.module.scss';
 import {
   filterPokelist,
   getPokelist,
   ListParams,
-} from "../../store/actions/pokelist";
-import PokeCard from "../../components/PokeCard/PokeCard";
-import usePagination from "../../hooks/usePagination";
-import Filter from "../../components/Filter/Filter";
-import debounce from "../../functions/debounce";
+} from '../../store/actions/pokelist';
+import PokeCard from '../../components/PokeCard/PokeCard';
+import usePagination from '../../hooks/usePagination';
+import Filter from '../../components/Filter/Filter';
+import debounce from '../../functions/debounce';
 
 interface PokeListProps {
   pokelist: [] | null;
@@ -26,7 +26,7 @@ const PokeList = ({
   getPokelist,
   filterPokelist,
 }: PokeListProps) => {
-  const [searchValue, changeSearchValue] = useState("");
+  const [searchValue, changeSearchValue] = useState('');
 
   const debounceFilter = useCallback(debounce(filterPokelist, 700), [
     filterPokelist,
@@ -38,7 +38,7 @@ const PokeList = ({
     debounceFilter(value);
   };
   const clearSearchValue = useCallback(() => {
-    changeSearchValue("");
+    changeSearchValue('');
   }, []);
 
   /** Пагинация */

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import Preloader from "../components/UI/Preloader/Preloader";
+import React, { useEffect, useState } from 'react';
+import Preloader from '../components/UI/Preloader/Preloader';
 
 /**
  * Прелоадер использует искусственную задержку, для того чтобы не было моргания при слишком быстрой загрузке

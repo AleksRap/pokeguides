@@ -1,6 +1,6 @@
-import React from "react";
-import { Route } from "react-router-dom";
-import { RoutesProps } from "./routes";
+import React from 'react';
+import { Route } from 'react-router-dom';
+import { RoutesProps } from './routes';
 
 /**
  * На входе массив с инфой о роутах
