@@ -57,7 +57,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier && npm run prettier",
+      "pre-commit": "npm run prettier && npm run lint:fix && npm run build",
       "pre-push": "firebase deploy"
     }
   }
