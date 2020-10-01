@@ -1,3 +1,4 @@
+import { ThunkAction } from 'redux-thunk';
 import axiosCustom from '../../axios/config';
 import { GET_INFO_ABILITY_SUCCESS, INFO_ABILITY_ERROR } from './actionTypes';
 
@@ -7,11 +8,16 @@ interface InfoAbility {
   effect_entries: [];
 }
 
+export interface Action {
+  type: string;
+  payload: any;
+}
+
 export function getInfoAbilitySuccess({
   id,
   name,
   effect_entries: effectEntries,
-}: InfoAbility) {
+}: InfoAbility): Action {
   /**
    * Приводим результаты к нужному виду
    */
@@ -27,15 +33,17 @@ export function getInfoAbilitySuccess({
   };
 }
 
-export function infoAbilityError(error: string) {
+export function infoAbilityError(error: string): Action {
   return {
     type: INFO_ABILITY_ERROR,
     payload: error,
   };
 }
 
-export function getInfoAbility(id: number | string) {
-  return async (dispatch: any) => {
+export function getInfoAbility(
+  id: number | string
+): ThunkAction<any, any, any, any> {
+  return async (dispatch: (arg: Action) => any) => {
     const url = `ability/${id}`;
 
     try {

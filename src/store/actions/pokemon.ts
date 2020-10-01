@@ -1,5 +1,7 @@
+import { ThunkAction } from 'redux-thunk';
 import axiosCustom from '../../axios/config';
 import { GET_INFO_POKEMON_SUCCESS, INFO_POKEMON_ERROR } from './actionTypes';
+import { Action } from './ability';
 
 interface AbilityProps {
   name: string;
@@ -28,7 +30,7 @@ export function getInfoPokemonSuccess({
   base_experience: baseExperience,
   types,
   abilities,
-}: PokemonInfoProps) {
+}: PokemonInfoProps): Action {
   /**
    * Приводим результаты к нужному виду
    */
@@ -60,15 +62,17 @@ export function getInfoPokemonSuccess({
   };
 }
 
-export function infoPokemonError(error: string) {
+export function infoPokemonError(error: string): Action {
   return {
     type: INFO_POKEMON_ERROR,
     payload: error,
   };
 }
 
-export function getInfoPokemon(id: number | string) {
-  return async (dispatch: any) => {
+export function getInfoPokemon(
+  id: number | string
+): ThunkAction<any, any, any, any> {
+  return async (dispatch: (arg: Action) => any) => {
     const url = `pokemon/${id}`;
 
     try {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import classes from './Pagination.module.scss';
 
-interface PaginationProps {
+export interface PaginationProps {
   className: string;
   count: number;
   limit: number;
@@ -11,7 +11,7 @@ interface PaginationProps {
   onNext: (num: number) => void;
 }
 
-const Pagination = ({
+const Pagination: React.FC<PaginationProps> = ({
   className,
   count,
   limit,
@@ -19,7 +19,7 @@ const Pagination = ({
   onPrev,
   onNum,
   onNext,
-}: PaginationProps) => {
+}) => {
   /** Добавляем классы для пагинации */
   const cls: string[] = [classes.Pagination];
   if (className) {

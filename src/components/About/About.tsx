@@ -8,7 +8,7 @@ interface AboutProps {
   children?: React.ReactNode;
 }
 
-const About = ({ id, name, children }: AboutProps) => {
+const About: React.FC<AboutProps> = ({ id, name, children }) => {
   const img: React.ReactNode | null = id ? (
     <div className={classes.img}>
       <img src={getUrlImgPokemon(id)} alt={name} />

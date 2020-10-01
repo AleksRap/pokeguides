@@ -12,7 +12,7 @@ interface PokelistProps {
 
 interface PokelistReducerProps {
   pokelist: null | PokelistProps[];
-  pokelistFilter: null | [];
+  pokelistFilter: null | any[];
   count: null | number;
   limit: number;
   errors: null | string;
@@ -29,7 +29,7 @@ const initialState: PokelistReducerProps = {
 export default function pokelistReducer(
   state: PokelistReducerProps = initialState,
   action: Action
-) {
+): PokelistReducerProps {
   switch (action.type) {
     case POKELIST_ERROR:
       return {

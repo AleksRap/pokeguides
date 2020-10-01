@@ -9,7 +9,7 @@ interface PokeCardProps {
   name: string;
 }
 
-const PokeCard = ({ id, name }: PokeCardProps) => {
+const PokeCard: React.FC<PokeCardProps> = ({ id, name }) => {
   const img: any = useRef(null);
 
   const [loading, changeLoading] = useState(true);

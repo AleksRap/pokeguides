@@ -9,7 +9,7 @@ import { AbilitiesProps } from '../../store/reducers/pokemon';
 
 interface PokePageProps {
   pokemon: any;
-  getInfo: (param: object) => any;
+  getInfo: (param: any) => any;
 }
 
 const PokePage: any = ({ pokemon, getInfo }: PokePageProps) => {
@@ -62,7 +62,6 @@ const PokePage: any = ({ pokemon, getInfo }: PokePageProps) => {
   );
 
   const callback = useCallback(() => getInfo(id), [getInfo, id]);
-
   return usePreloader(content, callback);
 };
 

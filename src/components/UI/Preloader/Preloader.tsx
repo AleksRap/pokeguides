@@ -5,7 +5,7 @@ interface PreloaderProps {
   className?: string;
 }
 
-const Preloader = ({ className }: PreloaderProps) => {
+const Preloader: React.FC<PreloaderProps> = ({ className }) => {
   const cls = [classes.preloader];
   if (className) {
     cls.push(className);

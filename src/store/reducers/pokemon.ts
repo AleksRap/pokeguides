@@ -33,7 +33,7 @@ const initialState: PokemonReducerProps = {
 export default function pokemonReducer(
   state: PokemonReducerProps = initialState,
   action: Action
-) {
+): PokemonReducerProps {
   switch (action.type) {
     case POKELIST_ERROR:
       return {

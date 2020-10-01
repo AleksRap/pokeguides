@@ -9,13 +9,13 @@ interface InputProps {
   placeholder?: string;
 }
 
-const Input = ({
+const Input: React.FC<InputProps> = ({
   type = 'text',
   className,
   onChange,
   value,
   placeholder,
-}: InputProps) => {
+}) => {
   /** Формируем css классы */
   const cls: string[] = [classes.input];
   if (className) {

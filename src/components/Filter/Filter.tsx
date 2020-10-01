@@ -8,7 +8,7 @@ interface FilterProps {
   onChange: (e: React.ChangeEvent) => void;
 }
 
-const Filter = ({ className, value, onChange }: FilterProps) => {
+const Filter: React.FC<FilterProps> = ({ className, value, onChange }) => {
   const cls: string[] = [classes.filter];
   if (className) {
     cls.push(className);

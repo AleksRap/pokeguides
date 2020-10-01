@@ -15,23 +15,25 @@ interface PokeListProps {
   pokelist: [] | null;
   count: number;
   limit: number;
-  getList: (param: object) => any;
+  getList: (param: any) => any;
   filter: (name: string) => any;
 }
 
-const PokeList: any = ({
+const PokeList: React.FC<PokeListProps> = ({
   pokelist,
   count,
   limit,
   getList,
   filter,
-}: PokeListProps) => {
+}) => {
   const [searchValue, changeSearchValue] = useState('');
 
-  const debounceFilter: (value: any) => any = useCallback(
-    debounce(filter, 700),
-    [filterPokelist]
-  );
+  const filterFn = debounce(filter, 700);
+
+  const debounceFilter: (value: any) => any = useCallback(filterFn, [
+    filterPokelist,
+    filterFn,
+  ]);
 
   const onChange = (e: any) => {
     const { value } = e.target;

@@ -1,4 +1,7 @@
-const debounce = (func: (...params: any) => any, wait: number) => {
+const debounce = (
+  func: (...params: any) => any,
+  wait: number
+): (() => void) => {
   let timeout: NodeJS.Timeout;
 
   return function executedFunction(...args: []) {

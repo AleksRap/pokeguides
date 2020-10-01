@@ -1,3 +1,4 @@
+import { ThunkAction } from 'redux-thunk';
 import axiosCustom from '../../axios/config';
 import {
   GET_POKELIST_SUCCESS,
@@ -5,6 +6,7 @@ import {
   POKELIST_FILTER,
 } from './actionTypes';
 import serialize from '../../functions/serialize';
+import { Action } from './ability';
 
 interface PokelistServerProps {
   url: string;
@@ -20,7 +22,7 @@ export interface ListParams {
   offset: number;
 }
 
-export function getPokelistSuccess(pokeinfo: Results) {
+export function getPokelistSuccess(pokeinfo: Results): Action {
   /**
    * Приводим результаты к нужному виду
    */
@@ -43,22 +45,24 @@ export function getPokelistSuccess(pokeinfo: Results) {
   };
 }
 
-export function filterPokelist(name: string) {
+export function filterPokelist(name: string): Action {
   return {
     type: POKELIST_FILTER,
     payload: name.toLowerCase(),
   };
 }
 
-export function pokelistError(error: string) {
+export function pokelistError(error: string): Action {
   return {
     type: POKELIST_ERROR,
     payload: error,
   };
 }
 
-export function getPokelist(params: ListParams) {
-  return async (dispatch: any) => {
+export function getPokelist(
+  params: ListParams
+): ThunkAction<any, any, any, any> {
+  return async (dispatch: (arg: Action) => any) => {
     let formatParams = '';
     if (params) formatParams = params ? `?${serialize(params)}` : '';
 

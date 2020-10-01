@@ -11,7 +11,7 @@ import Pagination from '../components/UI/Pagination/Pagination';
  * @returns {JSX.Element}
  */
 interface UsePaginationInterface {
-  fnGetInfo: (param: object) => void;
+  fnGetInfo: (param: any) => void;
   limit: number;
   count: number;
   className: string;
@@ -20,7 +20,7 @@ interface UsePaginationInterface {
 export default function usePagination(
   { fnGetInfo, limit, count, className }: UsePaginationInterface,
   callback: () => any
-) {
+): React.ReactNode {
   /** Объект истории */
   const history = useHistory();
 

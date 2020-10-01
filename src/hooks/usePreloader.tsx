@@ -7,7 +7,10 @@ import Preloader from '../components/UI/Preloader/Preloader';
  * @param fn
  * @returns {JSX.Element|*}
  */
-const usePreloader = (component: React.ReactNode, fn: () => void) => {
+const usePreloader = (
+  component: React.ReactNode,
+  fn: () => void
+): React.ReactNode => {
   const [loading, changeLoading] = useState<boolean>(true);
 
   const delay = 700;

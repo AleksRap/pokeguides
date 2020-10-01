@@ -21,6 +21,8 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
+    "camelcase": "off",
+    "no-use-before-define": "off",
     "space-before-function-paren": 0,
     "import/export": 0,
     "no-debugger": "error",

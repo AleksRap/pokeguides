@@ -27,7 +27,7 @@ const initialState: AbilityReducerProps = {
 export default function abilityReducer(
   state: AbilityReducerProps = initialState,
   action: Action
-) {
+): AbilityReducerProps {
   switch (action.type) {
     case INFO_ABILITY_ERROR:
       return {
