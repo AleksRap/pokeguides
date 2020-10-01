@@ -5,6 +5,7 @@
 .idea
 /.pnp
 .pnp.js
+.firebase/*.cache
 
 # testing
 /coverage
