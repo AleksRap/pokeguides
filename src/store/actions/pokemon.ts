@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import axiosCustom from '../../axios/config';
 import { GET_INFO_POKEMON_SUCCESS, INFO_POKEMON_ERROR } from './actionTypes';
 
@@ -26,7 +25,7 @@ export function getInfoPokemonSuccess({
   name,
   weight,
   height,
-  base_experience,
+  base_experience: baseExperience,
   types,
   abilities,
 }: PokemonInfoProps) {
@@ -51,7 +50,7 @@ export function getInfoPokemonSuccess({
     types: types.map(({ type: { name: nameType } }) => nameType).join(', '),
     weight,
     height,
-    base_experience,
+    baseExperience,
     abilities: abilitiesFormat,
   };
 

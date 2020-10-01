@@ -8,12 +8,14 @@ import store from './store/store';
 import 'normalize.css';
 
 /** Высота вьюпорта с учетом панелей инструментов на мобилках */
-import './functions/viewportHeight';
+import viewportHeight from './functions/viewportHeight';
 
 /** Общие стили */
 import './style/_index.scss';
 
 import App from './App';
+
+viewportHeight();
 
 ReactDOM.render(
   <React.StrictMode>

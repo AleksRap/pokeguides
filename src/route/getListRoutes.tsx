@@ -11,10 +11,8 @@ import { RoutesProps } from './routes';
 
 export default function getListRoutes(routes: RoutesProps[]) {
   return routes.map(
-    ({ path, component, exact }): React.ReactNode => {
-      return (
-        <Route path={path} component={component} exact={exact} key={path} />
-      );
-    }
+    ({ path, component, exact }): React.ReactNode => (
+      <Route path={path} component={component} exact={exact} key={path} />
+    )
   );
 }

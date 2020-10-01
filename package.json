@@ -16,7 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint:fix": "eslint --debug src/ --fix",
+    "lint:fix": "eslint src/**/*.{ts,tsx} --fix",
     "prettier": "prettier --write src/**/*.{ts,tsx,js,jsx}"
   },
   "browserslist": {
@@ -57,7 +57,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier"
+      "pre-commit": "npm run prettier && npm run prettier"
     }
   }
 }

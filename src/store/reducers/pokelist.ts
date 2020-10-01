@@ -49,9 +49,9 @@ export default function pokelistReducer(
         ...state,
         pokelistFilter:
           state.pokelist &&
-          state.pokelist.filter(({ name }) => {
-            return name.toLowerCase().indexOf(action.payload) !== -1;
-          }),
+          state.pokelist.filter(
+            ({ name }) => name.toLowerCase().indexOf(action.payload) !== -1
+          ),
         errors: null,
       };
     default:

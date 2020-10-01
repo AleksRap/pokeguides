@@ -12,7 +12,7 @@ interface AbilityPageProps {
   getInfo: (id: number) => any;
 }
 
-const AbilityPage = ({ ability, getInfo }: AbilityPageProps) => {
+const AbilityPage: any = ({ ability, getInfo }: AbilityPageProps) => {
   /** Параметры роутов */
   const { id } = useParams();
 
@@ -45,5 +45,4 @@ function mapDispatchToProps(dispatch: any) {
   };
 }
 
-// @ts-ignore
 export default connect(mapStateToProps, mapDispatchToProps)(AbilityPage);

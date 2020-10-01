@@ -1,7 +1,9 @@
 {
   "plugins": [
     "prettier",
-    "react", "react-hooks", "jsx-a11y"
+    "react",
+    "react-hooks",
+    "jsx-a11y"
   ],
   "env": {
     "browser": true,
@@ -35,12 +37,18 @@
     "import/no-extraneous-dependencies": ["error", {
       "devDependencies": true
     }],
-    "@typescript-eslint/explicit-function-return-type": 0
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-explicit-any": "off"
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "16.13.1"
     }
   }
 }

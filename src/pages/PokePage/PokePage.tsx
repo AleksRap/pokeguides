@@ -12,7 +12,7 @@ interface PokePageProps {
   getInfo: (param: object) => any;
 }
 
-const PokePage = ({ pokemon, getInfo }: PokePageProps) => {
+const PokePage: any = ({ pokemon, getInfo }: PokePageProps) => {
   /** Параметры роутов */
   const { id } = useParams();
 
@@ -78,5 +78,4 @@ function mapDispatchToProps(dispatch: any) {
   };
 }
 
-// @ts-ignore
 export default connect(mapStateToProps, mapDispatchToProps)(PokePage);

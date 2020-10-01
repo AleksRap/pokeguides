@@ -15,25 +15,26 @@ interface PokeListProps {
   pokelist: [] | null;
   count: number;
   limit: number;
-  getPokelist: (param: object) => any;
-  filterPokelist: (name: string) => any;
+  getList: (param: object) => any;
+  filter: (name: string) => any;
 }
 
-const PokeList = ({
+const PokeList: any = ({
   pokelist,
   count,
   limit,
-  getPokelist,
-  filterPokelist,
+  getList,
+  filter,
 }: PokeListProps) => {
   const [searchValue, changeSearchValue] = useState('');
 
-  const debounceFilter = useCallback(debounce(filterPokelist, 700), [
-    filterPokelist,
-  ]);
+  const debounceFilter: (value: any) => any = useCallback(
+    debounce(filter, 700),
+    [filterPokelist]
+  );
 
   const onChange = (e: any) => {
-    const value = e.target.value;
+    const { value } = e.target;
     changeSearchValue(value);
     debounceFilter(value);
   };
@@ -44,7 +45,7 @@ const PokeList = ({
   /** Пагинация */
   const pagination = usePagination(
     {
-      fnGetInfo: getPokelist,
+      fnGetInfo: getList,
       limit,
       count,
       className: classes.pagination,
@@ -87,10 +88,9 @@ function mapStateToProps(state: any) {
 
 function mapDispatchToProps(dispatch: any) {
   return {
-    getPokelist: (param: ListParams) => dispatch(getPokelist(param)),
-    filterPokelist: (name: string) => dispatch(filterPokelist(name)),
+    getList: (param: ListParams) => dispatch(getPokelist(param)),
+    filter: (name: string) => dispatch(filterPokelist(name)),
   };
 }
 
-// @ts-ignore
 export default connect(mapStateToProps, mapDispatchToProps)(PokeList);

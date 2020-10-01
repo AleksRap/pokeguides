@@ -48,11 +48,9 @@ const Pagination = ({
   const nextPage = (): void => changeActivePage(activePage + 1);
 
   /** Шаблон боковых элементов */
-  const directionTmpl = (
-    direction: string = 'next'
-  ): React.ReactNode | null => {
-    let handlerClick: () => void = () => {};
-    let show: boolean = false;
+  const directionTmpl = (direction = 'next'): React.ReactNode | null => {
+    let handlerClick: () => void = () => '';
+    let show = false;
 
     switch (direction) {
       case 'prev':
@@ -89,7 +87,7 @@ const Pagination = ({
     ) : null;
 
   /** Шаблон нумерованной страницы */
-  const numTmpl = (num: number, active: boolean = false): React.ReactNode => {
+  const numTmpl = (num: number, active = false): React.ReactNode => {
     const clsNum: string[] = [classes.num];
     if (active) {
       clsNum.push(classes.active);

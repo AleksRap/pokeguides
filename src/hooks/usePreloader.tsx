@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Preloader from '../components/UI/Preloader/Preloader';
 
 /**
@@ -10,17 +10,14 @@ import Preloader from '../components/UI/Preloader/Preloader';
 const usePreloader = (component: React.ReactNode, fn: () => void) => {
   const [loading, changeLoading] = useState<boolean>(true);
 
-  const delay: number = 700;
-  const timeStart: number = new Date().getTime();
-  let timeEnd: number | null = null;
-
+  const delay = 700;
+  const timeStart: number = useMemo(() => new Date().getTime(), []);
   useEffect(() => {
     let timeout: any;
+    const timeEnd: number | null = new Date().getTime();
 
     (async () => {
       await fn();
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      timeEnd = new Date().getTime();
       const different: number = timeEnd - timeStart;
 
       if (different >= delay) {
@@ -32,7 +29,7 @@ const usePreloader = (component: React.ReactNode, fn: () => void) => {
     })();
 
     return () => clearTimeout(timeout);
-  }, [fn, changeLoading]);
+  }, [fn, changeLoading, timeStart]);
 
   return loading ? <Preloader /> : component;
 };

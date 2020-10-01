@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import axiosCustom from '../../axios/config';
 import { GET_INFO_ABILITY_SUCCESS, INFO_ABILITY_ERROR } from './actionTypes';
 
@@ -11,7 +10,7 @@ interface InfoAbility {
 export function getInfoAbilitySuccess({
   id,
   name,
-  effect_entries,
+  effect_entries: effectEntries,
 }: InfoAbility) {
   /**
    * Приводим результаты к нужному виду
@@ -19,7 +18,7 @@ export function getInfoAbilitySuccess({
   const abilityFormat = {
     id,
     name: name[0].toUpperCase() + name.slice(1),
-    effectEntries: effect_entries.map(({ effect }) => effect),
+    effectEntries: effectEntries.map(({ effect }) => effect),
   };
 
   return {
